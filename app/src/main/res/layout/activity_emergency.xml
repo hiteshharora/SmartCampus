@@ -12,7 +12,6 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/emergency_list"
         android:paddingTop="12dp"
         android:layout_alignParentStart="true" />
 

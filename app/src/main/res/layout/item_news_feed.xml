@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_news_detail_view"
+    android:layout_width="match_parent"
+    android:layout_height="112dp"
+    android:padding="@dimen/padding_small"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/news_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:contentDescription="News Thumbnail"
+        android:paddingTop="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/asu_logo" />
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/news_title"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="News Title"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:paddingTop="8dp"
+            android:text="News Published Date"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingTop="8dp"
+            android:text="News Content"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
+

@@ -27,7 +27,6 @@ public class Emergency extends AppCompatActivity {
         setContentView(R.layout.activity_emergency);
         setTitle("Emergency");
 
-        emergencyListView = (ListView) findViewById(R.id.emergency_list);
 
         List<String> emergencyArrayList = new ArrayList<String>();
         emergencyArrayList.add("Emergency");

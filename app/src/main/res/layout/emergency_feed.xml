@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:padding="@dimen/padding_small"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/emergency_title"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@color/colorDarkGray"
+        android:text="Emergency Title"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/emergency_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:paddingTop="8dp"
+        android:textColor="@color/colorPrimary"
+        android:text="Emergency Contact"
+        android:textSize="18sp" />
+
+</LinearLayout>

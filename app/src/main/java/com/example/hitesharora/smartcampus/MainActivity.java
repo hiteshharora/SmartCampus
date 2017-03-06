@@ -1,48 +1,37 @@
 package com.example.hitesharora.smartcampus;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.example.hitesharora.smartcampus.Emergency.EmergencyFragment;
+import com.example.hitesharora.smartcampus.News.NewsFragment;
+import com.example.hitesharora.smartcampus.Settings.SettingFragment;
+import com.example.hitesharora.smartcampus.Streaming.StreamingFragment;
 
-import com.example.hitesharora.smartcampus.Emergency.Emergency;
-import com.example.hitesharora.smartcampus.News.NewsList;
-import com.example.hitesharora.smartcampus.Settings.Settings;
-import com.example.hitesharora.smartcampus.Streaming.Streaming;
-
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         onCreateDrawer(toolbar);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        onNavigationItemSelected(navigationView.getMenu().getItem(2));
     }
     protected void onCreateDrawer(Toolbar toolbar){
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -89,35 +78,38 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        String title = getString(R.string.app_name);
 
-        if (id == R.id.nav_news) {
-            // Handle the news action
-            Intent intent = new Intent(getApplicationContext(),
-                    NewsList.class);
-            //intent.putExtra("feedId", feedId);
-            startActivityForResult(intent, Activity.RESULT_OK);
+        Fragment fragment = null;
 
-        } else if (id == R.id.nav_emergency) {
-            Intent intent = new Intent(getApplicationContext(),
-                    Emergency.class);
-            //intent.putExtra("feedId", feedId);
-            startActivityForResult(intent, Activity.RESULT_OK);
-        } else if (id == R.id.nav_streaming) {
-            Intent intent = new Intent(getApplicationContext(),
-                    Streaming.class);
-            //intent.putExtra("feedId", feedId);
-            startActivityForResult(intent, Activity.RESULT_OK);
-        } else if (id == R.id.nav_settings) {
-            Intent intent = new Intent(getApplicationContext(),
-                    Settings.class);
-            //intent.putExtra("feedId", feedId);
-            startActivityForResult(intent, Activity.RESULT_OK);
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        switch (id){
+            case R.id.nav_news:
+                title = getString(R.string.news);
+                fragment = new NewsFragment();
+                break;
+            case R.id.nav_emergency:
+                title = getString(R.string.emergency);
+                fragment = new EmergencyFragment();
+                break;
+            case R.id.nav_streaming:
+                title = getString(R.string.streaming);
+                fragment = new StreamingFragment();
+                break;
+            case R.id.nav_settings:
+                title = getString(R.string.settings);
+                fragment = new SettingFragment();
+                break;
         }
+
+        //replacing the fragment
+        if (fragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.commit();
+        }
+
+        // Highlight the selected item, update the title, and close the drawer
+        setTitle(title);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
