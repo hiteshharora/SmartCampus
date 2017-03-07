@@ -76,36 +76,36 @@ public class EmergencyFragment extends BaseFragment {
         final RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.list_emergency);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        final EmergencyAdapter emergencyAdapter = new EmergencyAdapter(mEmergencyItemsList, R.layout.emergency_feed, getActivity());
+        final EmergencyAdapter emergencyAdapter = new EmergencyAdapter(mEmergencyItemsList, R.layout.emergency_feed, this.getActivity());
         recyclerView.addItemDecoration(new VerticalSpaceItemDecoration(getActivity()));
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(emergencyAdapter);
 
-        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-
-                return true;
-            }
-
-            @Override
-            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-                Log.d("On click","On Item Touch - Emergency Fragment");
-            }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-            }
-        });
-        recyclerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("On click","Emergency Fragment");
-            }
-        });
+//        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+//            @Override
+//            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+//
+//                return false;
+//            }
+//
+//            @Override
+//            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+//                Log.d("On click","On Item Touch - Emergency Fragment");
+//            }
+//
+//            @Override
+//            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+//
+//            }
+//        });
+//        recyclerView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("On click","Emergency Fragment");
+//            }
+//        });
 
 
 

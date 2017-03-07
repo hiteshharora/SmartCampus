@@ -5,12 +5,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
 
-
-
-
     <string name="emergency">Emergency</string>
     <string name="news">News</string>
     <string name="streaming">Streaming</string>
     <string name="settings">Settings</string>
-
+    <string name="campusAlert">Campus Alert</string>
+    <string name="emergencyAlert">Emergency Alert</string>
+    <string name="testAlert">Test Alert</string>
 </resources>
