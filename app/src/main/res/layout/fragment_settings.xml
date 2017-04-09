@@ -18,7 +18,7 @@
             android:id="@+id/settingNotification"
             android:text="Campus Alerts"
             android:layout_weight="0.9"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <Switch
@@ -43,7 +43,7 @@
             android:id="@+id/setting4Name"
             android:text="Emergency Alerts"
             android:layout_weight="0.9"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <Switch
@@ -68,7 +68,7 @@
             android:id="@+id/setting3Name"
             android:text="Event Alerts"
             android:layout_weight="0.9"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <Switch
