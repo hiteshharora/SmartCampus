@@ -12,4 +12,17 @@
     <string name="campusAlert">Campus Alert</string>
     <string name="emergencyAlert">Emergency Alert</string>
     <string name="testAlert">Test Alert</string>
+
+
+    <!-- News -->
+    <string name="title_activity_news">A-STATE NEWS</string>
+    <string name="news_title_text">News Title</string>
+    <string name="news_published_date">May 14, 2014 at 7:45 PM</string>
+    <string name="news_content">News Content</string>
+    <string name="news_thumbnail">News Thumbnail</string>
+
+    <string name="dot">.</string>
+
+    <string name="ivCover">Profile</string>
+
 </resources>

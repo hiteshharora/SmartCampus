@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <TextView
+        android:id="@+id/buffer_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/streaming"
-        android:textSize="@dimen/text_size_large"
-        android:textStyle="bold" />
+        android:layout_gravity="center_horizontal"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"/>
+    <RelativeLayout
+        android:id="@+id/waveAnimation"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+        <include layout="@layout/activity_hangout_dot_anim" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/station_logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/ivCover"/>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/course_details_row_height"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="bottom"
+        android:padding="5dp">
+        <Button
+            android:id="@+id/play_pause_button"
+            android:background="@color/colorLightGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"/>
+    </LinearLayout>
+
+</FrameLayout>

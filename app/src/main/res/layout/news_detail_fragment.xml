@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:padding="@dimen/padding_small">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_small">
+
+        <TextView
+            android:id="@+id/news_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/news_title_text" />
+
+        <TextView
+            android:id="@+id/news_details_item_publishedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/news_published_date" />
+
+        <ImageView
+            android:id="@+id/news_details_image"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/news_thumbnail"
+            android:paddingTop="@dimen/padding_small"
+            android:scaleType="fitCenter"
+            android:src="@drawable/asu_logo" />
+
+        <TextView
+            android:id="@+id/news_details_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingTop="@dimen/padding_small"
+            android:text="@string/news_content" />
+    </LinearLayout>
+</ScrollView>

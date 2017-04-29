@@ -20,6 +20,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     private ArrayList<NewsItem> news;
     private int rowLayout;
     private Context context;
+    private OnItemClickListener mOnItemClickListener;
  
  
     public static class NewsViewHolder extends RecyclerView.ViewHolder {
@@ -38,10 +39,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         }
     }
  
-    public NewsAdapter(ArrayList<NewsItem> news, int rowLayout, Context context) {
+    public NewsAdapter(ArrayList<NewsItem> news, int rowLayout, Context context, OnItemClickListener onItemClickListener) {
         this.news = news;
         this.rowLayout = rowLayout;
         this.context = context;
+        this.mOnItemClickListener = onItemClickListener;
     }
 
     public void notifyDataChanged(ArrayList<NewsItem> news){
@@ -67,10 +69,21 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
                 .override(450, 450)
                 .placeholder(R.drawable.asu_logo)
                 .crossFade().into(holder.image);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnItemClickListener.onItemClick(news.get(position));
+            }
+        });
     }
  
     @Override
     public int getItemCount() {
         return news.size();
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(NewsItem newsItem);
     }
 }
